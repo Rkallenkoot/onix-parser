@@ -27,15 +27,8 @@ class RelatedProduct
      * @param CodeList51 $ProductRelationCode
      * @return void
      */
-    public function addProductRelationCode(CodeList51 $ProductRelationCode)
+    public function addProductRelationCode($ProductRelationCode)
     {
-        /*if (is_array($ProductRelationCode)) {
-            foreach ($ProductRelationCode as $code) {
-                $this->ProductRelationCode[] = Code::find(51, $code);
-            }
-        } else {
-            $this->ProductRelationCode[] = Code::find(51, $ProductRelationCode);
-        }*/
         $this->ProductRelationCode[] = $ProductRelationCode;
     }
 
