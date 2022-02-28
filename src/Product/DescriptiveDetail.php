@@ -424,7 +424,7 @@ class DescriptiveDetail
      *
      * @return array
      */
-    public function getMeasures()
+    protected function getMeasures()
     {
     	return $this->Measure;
     }
@@ -514,7 +514,7 @@ class DescriptiveDetail
      *
      * @return Subject[]
      */
-    public function getSubjects()
+    protected function getSubjects()
     {
     	return $this->Subject;
     }
@@ -618,7 +618,7 @@ class DescriptiveDetail
      *
      * @return Measure
      */
-    public function getHeight()
+    protected function getHeight()
     {
     	foreach ($this->Measure as $measure) {
     		if ($measure->isHeight()) {
@@ -632,7 +632,7 @@ class DescriptiveDetail
      *
      * @return Measure
      */
-    public function getWidth()
+    protected function getWidth()
     {
     	foreach ($this->Measure as $measure) {
     		if ($measure->isWidth()) {
@@ -646,7 +646,7 @@ class DescriptiveDetail
      *
      * @return Measure
      */
-    public function getThickness()
+    protected function getThickness()
     {
     	foreach ($this->Measure as $measure) {
     		if ($measure->isThickness()) {
@@ -660,7 +660,7 @@ class DescriptiveDetail
      *
      * @return Measure
      */
-    public function getWeight()
+    protected function getWeight()
     {
     	foreach ($this->Measure as $measure) {
     		if ($measure->isWeight()) {
@@ -674,7 +674,7 @@ class DescriptiveDetail
      *
      * @return array
      */
-    public function getAuthors()
+    protected function getAuthors()
     {
     	return array_filter($this->Contributor, function ($contributor) {
     		return $contributor->isAuthor();

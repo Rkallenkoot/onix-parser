@@ -6,7 +6,6 @@ use Ribal\Onix\CodeList\CodeList27;
 
 class Subject
 {
-
     /**
      * MainSubject
      *

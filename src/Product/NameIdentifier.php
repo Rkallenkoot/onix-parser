@@ -7,26 +7,11 @@ use Ribal\Onix\CodeList\CodeList44;
 class NameIdentifier
 {
 
-    /**
-     * NameIDType
-     *
-     * @var CodeList
-     */
-    protected $NameIDType;
-
-    /**
-     * IDTypeName
-     *
-     * @var string
-     */
-    protected $IDTypeName;
-
-    /**
-     * IDValue
-     *
-     * @var string
-     */
-    protected $IDValue;
+    public function __construct(
+        protected CodeList44 $NameIDType,
+        protected ?string $IDTypeName = null,
+        protected ?string $IDValue = null,
+    ) { }
 
     /**
      * Set NameIDType

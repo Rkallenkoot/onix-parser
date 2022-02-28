@@ -8,19 +8,10 @@ use Ribal\Onix\CodeList\CodeList74;
 class Language
 {
 
-    /**
-     * LanguageRole
-     *
-     * @var CodeList
-     */
-    protected $LanguageRole;
-
-    /**
-     * LanguageCode
-     *
-     * @var CodeList
-     */
-    protected $LanguageCode;
+    public function __construct(
+        protected ?CodeList22 $LanguageRole = null,
+        protected ?CodeList74 $LanguageCode = null,
+    ) {}
 
     /**
      * Set LanguageRole

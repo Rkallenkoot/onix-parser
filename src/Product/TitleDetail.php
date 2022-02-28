@@ -7,30 +7,10 @@ use Ribal\Onix\CodeList\CodeList15;
 class TitleDetail
 {
 
-    /**
-     * TitleType
-     *
-     * @var CodeList
-     */
-    protected $TitleType;
-
-    /**
-     * Array of TitleElement
-     *
-     * @var TitleElement[]
-     */
-    protected $TitleElement = [];
-
-    /**
-     * Set TitleType
-     *
-     * @param string $TitleType
-     * @return void
-     */
-    public function setTitleType(CodeList15 $TitleType)
-    {
-        $this->TitleType = $TitleType;
-    }
+    public function __construct(
+        public CodeList15 $TitleType,
+        public array $TitleElement = [],
+    ) {}
 
     /**
      * Add TitleElement
@@ -51,16 +31,6 @@ class TitleDetail
      */
     public function removeTitleElement(TitleElement $TitleElement)
     {
-    }
-
-    /**
-     * Get TitleType
-     *
-     * @return void
-     */
-    public function getTitleType()
-    {
-        return $this->TitleType;
     }
 
     /**

@@ -96,4 +96,22 @@ class Parser
         return $message;
     }
 
+    public function parseObject(Message $message)
+    {
+        $rootNode = [
+          '@xmlns' => 'http://ns.editeur.org/onix/3.0/reference',
+          '@release' => '3.0',
+          '#' => $message
+        ];
+
+        $message = $this->serializer->serialize($rootNode, 'xml', [
+            ObjectNormalizer::SKIP_NULL_VALUES => true,
+            ObjectNormalizer::PRESERVE_EMPTY_OBJECTS => true,
+            'xml_root_node_name' => 'ONIXMessage'
+        ]);
+
+        return $message;
+    }
+
+
 }

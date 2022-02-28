@@ -59,6 +59,21 @@ class Text
         $this->language = $language;
     }
 
+    public function getContent() : string
+    {
+        return $this->content;
+    }
+
+    public function getTextFormat()
+    {
+        return $this->textFormat;
+    }
+
+    public function getLanguage()
+    {
+        return $this->language;
+    }
+
     /**
      * Get plain text from (X)HTML
      *

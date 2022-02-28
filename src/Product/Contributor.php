@@ -8,49 +8,19 @@ use Ribal\Onix\Text;
 class Contributor
 {
 
-	private const CODE_AUTHOR = 'A01';
+    private const CODE_AUTHOR = 'A01';
 
-    /**
-     * SequenceNumber
-     *
-     * @var int
-     */
-    protected $SequenceNumber;
+    public function __construct(
+        public int $SequenceNumber,
+        public CodeList17 $ContributorRole,
+        public array $NameIdentifiers = [],
+        public ?string $NamesBeforeKey = null,
+        public ?string $BiographicalNote = null,
+        public ?string $KeyNames = null,
+    )
+    {
 
-    /**
-     * ContributorRole
-     *
-     * @var CodeList
-     */
-    protected $ContributorRole;
-
-    /**
-     * Array of NameIdentifiers
-     *
-     * @var array|NameIdentifier
-     */
-    protected $NameIdentifiers = [];
-
-    /**
-     * NamesBeforeKey
-     *
-     * @var string
-     */
-    protected $NamesBeforeKey;
-
-    /**
-     * BiographicalNote
-     *
-     * @var string
-     */
-    protected $BiographicalNote;
-
-    /**
-     * KeyNames
-     *
-     * @var string
-     */
-    protected $KeyNames;
+    }
 
     /**
      * Set SequenceNumber
@@ -183,7 +153,7 @@ class Contributor
      *
      * @return string
      */
-    public function getFirstname()
+    protected function getFirstname()
     {
         return $this->getNamesBeforeKey();
     }
@@ -193,7 +163,7 @@ class Contributor
      *
      * @return string
      */
-    public function getLastname()
+    protected function getLastname()
     {
         return $this->getKeyNames();
     }
@@ -203,7 +173,7 @@ class Contributor
      *
      * @return boolean
      */
-    public function isAuthor()
+    protected function isAuthor()
     {
         return $this->ContributorRole->getCode() === self::CODE_AUTHOR;
     }

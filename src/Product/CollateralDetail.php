@@ -74,7 +74,7 @@ class CollateralDetail
      *
      * @return array
      */
-    public function getTextContents()
+    protected function getTextContents()
     {
     	return $this->TextContent;
     }

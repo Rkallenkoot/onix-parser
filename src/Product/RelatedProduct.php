@@ -27,7 +27,7 @@ class RelatedProduct
      * @param CodeList51 $ProductRelationCode
      * @return void
      */
-    public function addProductRelationCode($ProductRelationCode)
+    public function addProductRelationCode(CodeList51 $ProductRelationCode)
     {
         $this->ProductRelationCode[] = $ProductRelationCode;
     }

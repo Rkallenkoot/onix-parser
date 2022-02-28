@@ -81,7 +81,7 @@ class Message
      *
      * @return array
      */
-    public function getProducts()
+    protected function getProducts()
     {
     	return $this->Product;
     }

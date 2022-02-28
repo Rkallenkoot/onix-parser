@@ -7,55 +7,16 @@ use Ribal\Onix\TextNode;
 
 class TitleElement
 {
-    /**
-     * SequenceNumber
-     *
-     * @var string
-     */
-    protected $SequenceNumber;
 
-    /**
-     * TitleElementLevel
-     *
-     * @var CodeList
-     */
-    protected $TitleElementLevel;
-
-    /**
-     * TitlePrefix
-     *
-     * @var string
-     */
-    protected $TitlePrefix;
-
-    /**
-     * TitleWithoutPrefix
-     *
-     * @var string
-     */
-    protected $TitleWithoutPrefix;
-
-    /**
-     * TitleText
-     *
-     * @var string
-     */
-    protected $TitleText;
-
-    /**
-     * Subtitle
-     *
-     * @var string
-     */
-    protected $Subtitle;
-
-    /**
-     * PartNumber
-     *
-     * @var int
-     */
-    protected $PartNumber;
-
+    public function __construct(
+        protected string $SequenceNumber,
+        protected CodeList149 $TitleElementLevel,
+        protected ?string $TitlePrefix = null,
+        protected ?string $TitleWithoutPrefix = null,
+        protected ?string $TitleText = null,
+        protected ?string $Subtitle = null,
+        protected ?string $PartNumber = null
+    ) { }
     /**
      * Set SequenceNumber
      *
