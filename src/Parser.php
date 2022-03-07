@@ -96,7 +96,7 @@ class Parser
         return $message;
     }
 
-    public function parseObject(Message $message)
+    public function writeObject(Message $message)
     {
         $rootNode = [
           '@xmlns' => 'http://ns.editeur.org/onix/3.0/reference',
