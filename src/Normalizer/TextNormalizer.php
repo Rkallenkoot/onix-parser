@@ -15,7 +15,11 @@ class TextNormalizer implements NormalizerInterface, DenormalizerInterface
      */
     public function normalize($object, $format = null, array $context = [])
     {
-
+      return array_filter([
+        '@textformat' => $object->getTextFormat(),
+        '@language' => $object->getLanguage(),
+        '#' => $object->getContent(),
+      ]);
     }
 
     /**
@@ -41,7 +45,7 @@ class TextNormalizer implements NormalizerInterface, DenormalizerInterface
      */
     public function supportsNormalization($data, $format = null)
     {
-
+      return $data instanceof Text;
     }
 
     /**

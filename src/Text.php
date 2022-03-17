@@ -82,9 +82,9 @@ class Text
     public function toPlain()
     {
 
-		if ($this->textFormat == self::TYPE_DEFAULT || $this->textFormat == self::TYPE_ASCII) {
-    		return $this->content;
-    	}
+        if ($this->textFormat == self::TYPE_DEFAULT || $this->textFormat == self::TYPE_ASCII) {
+            return $this->content;
+        }
 
         $content = preg_replace('/<br\s?/?>/', "\n", $this->content);
         $content = strip_tags($content);
@@ -102,22 +102,22 @@ class Text
      */
     public function toHtml()
     {
-    	if ($this->textFormat == self::TYPE_HTML || $this->textFormat == self::TYPE_XHTML) {
-    		return $this->content;
-    	}
-    
-    	$content = htmlspecialchars($this->content);
-    	
-		$content = '<p>' . preg_replace(
-			['/\n{2,}/m', '/\n/m'],
-			['</p><p>', '<br>'], 
-			trim($content)
-		) . '</p>';
-		
-		return $content;
-		
-    }    
-    
+        if ($this->textFormat == self::TYPE_HTML || $this->textFormat == self::TYPE_XHTML) {
+            return $this->content;
+        }
+
+        $content = htmlspecialchars($this->content);
+
+        $content = '<p>' . preg_replace(
+            ['/\n{2,}/m', '/\n/m'],
+            ['</p><p>', '<br>'],
+            trim($content)
+        ) . '</p>';
+
+        return $content;
+
+    }
+
     /**
      * Output the current content
      *
@@ -125,7 +125,7 @@ class Text
      */
     public function __toString()
     {
-    	return $this->content;
+        return $this->content;
     }
 
 }
